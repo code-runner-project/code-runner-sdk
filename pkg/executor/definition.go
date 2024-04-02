@@ -11,7 +11,7 @@ type Step struct {
 	Main                   string
 	Cmd                    []string
 	OnStartCallback        func(c OnStartCallbackData)
-	OnEachCompleteCallback func(c OnEachCompleteCallbackData)
+	OnEachCompleteCallback func(c OnTestCompleteCallbackData)
 	OnFinishCallback       func(c OnFinishCallbackData)
 }
 
@@ -22,7 +22,7 @@ type OnStartCallbackData struct {
 	DirSize   int64
 }
 
-type OnEachCompleteCallbackData struct {
+type OnTestCompleteCallbackData struct {
 	Id         string
 	Ref        string
 	StartTime  time.Time
