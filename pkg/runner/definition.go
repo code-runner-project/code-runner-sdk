@@ -1,6 +1,6 @@
 package runner
 
-type Bundle struct {
+type Step struct {
 	Files    []File
 	Tests    []Test
 	Language string

@@ -4,8 +4,8 @@ import (
 	"time"
 )
 
-type Input struct {
-	Values                 []string
+type Step struct {
+	Inputs                 []string
 	TempDir                string
 	WorkDir                string
 	Main                   string
