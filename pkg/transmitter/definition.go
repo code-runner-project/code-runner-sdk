@@ -5,12 +5,12 @@ import (
 )
 
 type Definition struct {
-	Version         string
-	Type            string
-	Name            string
-	Description     string
-	OnEachComplete  func(data OnEachCompleteCallbackData)
-	OnFullyComplete func(data OnFullyCompleteCallbackData)
+	Version             string
+	Type                string
+	Name                string
+	Description         string
+	OnEachCompleteFunc  func(data OnEachCompleteCallbackData)
+	OnFullyCompleteFunc func(data OnFullyCompleteCallbackData)
 }
 
 type OnEachCompleteCallbackData struct {
