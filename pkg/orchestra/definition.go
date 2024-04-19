@@ -35,3 +35,15 @@ func (o *Orchestrator) RegisterReceiver(name string, receiver receiver.Definitio
 func (o *Orchestrator) RegisterTransmitter(name string, transmitter transmitter.Definition) {
 	o.transmitters[name] = transmitter
 }
+
+func NewOrchestrator() *Orchestrator {
+	return &Orchestrator{
+		message: context.Message{
+			FlowDefinition: "",
+		},
+		runners:      make(map[string]runner.Definition),
+		executors:    make(map[string]executor.Definition),
+		receivers:    make(map[string]receiver.Definition),
+		transmitters: make(map[string]transmitter.Definition),
+	}
+}
