@@ -9,9 +9,13 @@ type Message struct {
 }
 
 type Context struct {
-	orchestrator orchestra.Orchestrator
+	orchestrator *orchestra.Orchestrator
 }
 
 func (c *Context) Proceed(message Message) {
 	c.orchestrator.Execute(message)
+}
+
+func NewContext(orchestrator *orchestra.Orchestrator) Context {
+	return Context{orchestrator: orchestrator}
 }
