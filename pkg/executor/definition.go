@@ -4,6 +4,14 @@ import (
 	"time"
 )
 
+type Definition struct {
+	Version     string
+	Type        string
+	Name        string
+	Description string
+	ExecuteFunc func(s Step)
+}
+
 type Step struct {
 	Inputs                 []string
 	TempDir                string
@@ -37,4 +45,10 @@ type OnFinishCallbackData struct {
 	Id         string
 	FinishTime time.Time
 	TotalTime  int64
+}
+
+type Result struct {
+	Actual   string
+	Expected string
+	Status   int
 }
