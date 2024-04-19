@@ -7,5 +7,5 @@ type Definition struct {
 	Type        string
 	Name        string
 	Description string
-	OnStartFunc func(ctx context.Context)
+	OnStartFunc func(ctx *context.Context)
 }
