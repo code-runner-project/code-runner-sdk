@@ -9,41 +9,41 @@ import (
 )
 
 type Orchestrator struct {
-	message      context.Message
-	runners      map[string]runner.Definition
-	executors    map[string]executor.Definition
-	receivers    map[string]receiver.Definition
-	transmitters map[string]transmitter.Definition
+	Message      context.Message
+	Runners      map[string]runner.Definition
+	Executors    map[string]executor.Definition
+	Receivers    map[string]receiver.Definition
+	Transmitters map[string]transmitter.Definition
 }
 
 func (o *Orchestrator) Execute(message context.Message) {
-	o.message = message
+	o.Message = message
 }
 
 func (o *Orchestrator) RegisterRunner(name string, runner runner.Definition) {
-	o.runners[name] = runner
+	o.Runners[name] = runner
 }
 
 func (o *Orchestrator) RegisterExecutor(name string, executor executor.Definition) {
-	o.executors[name] = executor
+	o.Executors[name] = executor
 }
 
 func (o *Orchestrator) RegisterReceiver(name string, receiver receiver.Definition) {
-	o.receivers[name] = receiver
+	o.Receivers[name] = receiver
 }
 
 func (o *Orchestrator) RegisterTransmitter(name string, transmitter transmitter.Definition) {
-	o.transmitters[name] = transmitter
+	o.Transmitters[name] = transmitter
 }
 
 func NewOrchestrator() *Orchestrator {
 	return &Orchestrator{
-		message: context.Message{
+		Message: context.Message{
 			FlowDefinition: "",
 		},
-		runners:      make(map[string]runner.Definition),
-		executors:    make(map[string]executor.Definition),
-		receivers:    make(map[string]receiver.Definition),
-		transmitters: make(map[string]transmitter.Definition),
+		Runners:      make(map[string]runner.Definition),
+		Executors:    make(map[string]executor.Definition),
+		Receivers:    make(map[string]receiver.Definition),
+		Transmitters: make(map[string]transmitter.Definition),
 	}
 }
