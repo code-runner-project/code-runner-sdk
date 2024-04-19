@@ -5,15 +5,22 @@ import (
 )
 
 type Definition struct {
-	Version       string
-	Type          string
-	Name          string
-	Description   string
-	OnReceiveFunc func(data OnReceiveCallbackData)
+	Version         string
+	Type            string
+	Name            string
+	Description     string
+	OnEachComplete  func(data OnEachCompleteCallbackData)
+	OnFullyComplete func(data OnFullyCompleteCallbackData)
 }
 
-type OnReceiveCallbackData struct {
+type OnEachCompleteCallbackData struct {
 	Status  int
 	Results []executor.Result
 	extras  map[string]interface{}
+}
+
+type OnFullyCompleteCallbackData struct {
+	Status int
+	Result executor.Result
+	extras map[string]interface{}
 }
